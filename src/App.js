@@ -1,12 +1,18 @@
-import logo from './logo.svg';
+import { useState } from 'react'
 import './App.css';
 
-function App() {
+function App(){
+  const[detail,updateData] = useState(0);
+  function autofitch(){
+    updateData(detail+1)
+  }
   return (
     <div className="App">
-     <h2>moheed</h2>
+      <center>
+     <p>{detail}</p>
+     <button onClick ={autofitch}>submit</button>
+     </center>
     </div>
   );
 }
-
 export default App;
