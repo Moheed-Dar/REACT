@@ -4,18 +4,21 @@ class App extends React.Component{
   constructor(){
     super();
     this.state={
-      name:" Mr Saad"
+      count:0
+    
     }
+    console.log("constructor")
   }
-  componentDidMount(){
-    console.log("didmount component")
+  componentDidUpdate(preProps,preState,snapshot){
+    console.log("didUpdate" , preState);
   }
+  
   render(){
-    console.log(this.state.name)
+    console.log( this.state.count)
     return(
       <div  className="App" >
-        <h2>hello sir { this.state.name }</h2>
-        <button onClick={()=>{this.setState({name:"Mr Saad Khan"})}} >Update  </button>
+        <h2>hello sir { this.state.count }</h2>
+        <button onClick={()=>{this.setState({count:this.state.count+1})}} >Update  </button>
 
       </div>
     );
