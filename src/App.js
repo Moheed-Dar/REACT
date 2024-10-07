@@ -7,9 +7,8 @@ const [count,setCount] =useState(20)
     console.warn("Data " + data)
   },[data])
   React.useEffect(()=>{
-    alert("click start" +count)
+    alert("click start" + count)
   },[count])
-  
     return(
       <div  className="App" >
         <h1>hello world!{data}</h1>
