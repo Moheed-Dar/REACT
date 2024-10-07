@@ -5,24 +5,19 @@ class App extends React.Component{
     super();
     this.state={
       count:0
-    
-    }
-    console.log("constructor")
-  }
-  componentDidUpdate(preProps,preState,snapshot){
-    console.log("didUpdate" , preState.count,this.state.count);
-    if(preState.count==this.state.count){
-      alert("you are in same state");
     }
   }
-  
+  shouldComponentUpdate(){
+    console.warn("not working", this.state.count);
+    if(this.state.count>5 && this.state.count<10){
+      return true;
+    }
+  }
   render(){
-    console.log( this.state.count)
     return(
       <div  className="App" >
         <h2>hello sir { this.state.count }</h2>
-        <button onClick={()=>{this.setState({count:+1})}} >Update  </button>
-
+        <button onClick={()=>{this.setState({count:this.state.count+1})}} >Update  </button>
       </div>
     );
   }
