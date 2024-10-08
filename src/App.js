@@ -1,20 +1,18 @@
-import'./App.css'
-import React, { useState,useEffect } from 'react'
-import Student from './Student'
-function App(){
-const [data,setData] =useState(10)
-const [count,setCount] =useState(20)
- 
-    return(
-      <div  className="App" >
-        <Student data={data} count={count} />
-        <button onClick={()=>setData(data+1)}>Data</button>
-        <button onClick={()=>setCount(count+1)}>Update</button>
-      </div>
-    );
-  }
+// import 'bootstrap/dist/css/bootstrap.min.css'
+// import { Container } from 'react-bootstrap';
+import "./App.css";
+import React from "react";
+function App() {
+  const Students = ["moheed", "zahid", "danish", "usama"];
+  return (
+    <div>
+      <h2>hello there</h2>
+      {
+      Students.map((items) =>
+        <h1>hello sir : {items}</h1>
+       )
+      }
+    </div>
+  );
+}
 export default App;
-
-
-
-
